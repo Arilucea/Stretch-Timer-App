@@ -40,6 +40,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        activity!!.title = getString(R.string.first_fragment_label)
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -79,7 +80,7 @@ class FirstFragment : Fragment() {
                 binding.roundTime.visibility = View.VISIBLE
                 binding.intermediateTime.visibility = View.VISIBLE
                 binding.currentRound.visibility = View.INVISIBLE
-                activity!!.title = "Stretch timer"
+                activity!!.title = getString(R.string.first_fragment_label)
                 roundCounter = 1
             }
         }
@@ -104,8 +105,8 @@ class FirstFragment : Fragment() {
         }
     }
 
-    private fun createTimer(roundTimeMilis: Int): CountDownTimer {
-        return object : CountDownTimer(roundTimeMilis.toLong(), 1000) {
+    private fun createTimer(roundTimeMillis: Int): CountDownTimer {
+        return object : CountDownTimer(roundTimeMillis.toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 binding.seconds.text = "" + (millisUntilFinished / 1000)
             }
@@ -129,15 +130,15 @@ class FirstFragment : Fragment() {
                     binding.seconds.text = "End!"
                     binding.buttonFirst.text = "Restart"
                     binding.currentRound.visibility = View.INVISIBLE
-                    activity!!.title = "Stretch timer"
+                    activity!!.title = "End"
                     roundCounter = 1
                 }
             }
         }
     }
 
-    private fun createIntermediateTimer(roundTimeMilis: Int): CountDownTimer {
-        return object : CountDownTimer(roundTimeMilis.toLong(), 1000) {
+    private fun createIntermediateTimer(roundTimeMillis: Int): CountDownTimer {
+        return object : CountDownTimer(roundTimeMillis.toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 binding.seconds.text = "" + (millisUntilFinished / 1000)
             }
