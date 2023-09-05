@@ -3,9 +3,11 @@
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">New session</string>
-    <string name="buttonText">Start rounds</string>
+    <string name="buttonStart">Start session</string>
+    <string name="buttonCancel">Cancel</string>
+    <string name="buttonRestart">Restart</string>
 
-    <string name="roundsNumberHint">Total number of rounds</string>
+    <string name="roundsNumberHint">Number of rounds</string>
     <string name="roundSecondsHint">Seconds of each round</string>
     <string name="intermediateSecondsHint">Seconds between rounds</string>
 </resources>

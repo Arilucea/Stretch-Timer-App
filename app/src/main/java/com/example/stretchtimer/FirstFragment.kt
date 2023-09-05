@@ -2,6 +2,8 @@ package com.example.stretchtimer
 
 import android.content.Context
 import android.media.MediaPlayer
+import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
@@ -10,6 +12,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import com.example.stretchtimer.databinding.FragmentFirstBinding
+
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -31,9 +34,9 @@ class FirstFragment : Fragment() {
     var timerRunning = false
     var thereIsIntermedateRound = false
 
-    var endRoundSound: MediaPlayer? = null
-    var intermediateSound: MediaPlayer? = null
-    var finishSessionSound: MediaPlayer? = null
+    var sound: MediaPlayer? = null
+
+    var notificationUri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,11 +52,9 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        endRoundSound = MediaPlayer.create(context, R.raw.alert_sound_mg)
-        intermediateSound = MediaPlayer.create(context, R.raw.alert_sound_intermed)
-        finishSessionSound = MediaPlayer.create(context, R.raw.alert_sound_end)
+        sound = MediaPlayer.create(context, notificationUri)
 
-        binding.buttonFirst.setOnClickListener {
+        binding.buttonStart.setOnClickListener {
             parseValues()
             activity!!.title = "Round number $roundCounter"
 
@@ -61,7 +62,7 @@ class FirstFragment : Fragment() {
                 roundTimer = startCycle()
                 intermediateTimer = createIntermediate()
                 timerRunning = true
-                binding.buttonFirst.text = "Cancel"
+                binding.buttonStart.text = getString(R.string.buttonCancel)
                 binding.totalRounds.visibility = View.INVISIBLE
                 binding.roundTime.visibility = View.INVISIBLE
                 binding.intermediateTime.visibility = View.INVISIBLE
@@ -74,7 +75,7 @@ class FirstFragment : Fragment() {
                 roundTimer!!.cancel()
                 intermediateTimer!!.cancel()
                 timerRunning = false
-                binding.buttonFirst.text = "Start rounds"
+                binding.buttonStart.text = getString(R.string.buttonStart)
                 binding.seconds.text = ""
                 binding.totalRounds.visibility = View.VISIBLE
                 binding.roundTime.visibility = View.VISIBLE
@@ -115,7 +116,7 @@ class FirstFragment : Fragment() {
                 totalRounds--
                 roundCounter++
                 if (totalRounds > 0) {
-                    endRoundSound!!.start()
+                    sound!!.start()
                     if (thereIsIntermedateRound) {
                         intermediateTimer!!.start()
                         activity!!.title = "Between rounds"
@@ -126,9 +127,9 @@ class FirstFragment : Fragment() {
                         start()
                     }
                 } else {
-                    finishSessionSound!!.start()
+                    sound!!.start()
                     binding.seconds.text = "End!"
-                    binding.buttonFirst.text = "Restart"
+                    binding.buttonStart.text = getString(R.string.buttonRestart)
                     binding.currentRound.visibility = View.INVISIBLE
                     activity!!.title = "End"
                     roundCounter = 1
@@ -146,7 +147,7 @@ class FirstFragment : Fragment() {
             override fun onFinish() {
                 activity!!.title = "Round number $roundCounter"
                 binding.currentRound.visibility = View.INVISIBLE
-                intermediateSound!!.start()
+                sound!!.start()
                 roundTimer!!.start()
             }
         }
