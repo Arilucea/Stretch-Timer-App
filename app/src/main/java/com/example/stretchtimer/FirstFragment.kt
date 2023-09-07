@@ -56,7 +56,7 @@ class FirstFragment : Fragment() {
 
         binding.buttonStart.setOnClickListener {
             parseValues()
-            activity!!.title = "Round number $roundCounter"
+            activity!!.title = "${getString(R.string.round)} $roundCounter"
 
             if (!timerRunning) {
                 roundTimer = startCycle()
@@ -67,7 +67,7 @@ class FirstFragment : Fragment() {
                 binding.roundTime.visibility = View.INVISIBLE
                 binding.intermediateTime.visibility = View.INVISIBLE
                 roundTimer!!.start()
-                binding.currentRound.text = "Rounds left " + (totalRounds).toString()
+                binding.currentRound.text = "${getString(R.string.roundsLefs)} $totalRounds"
                 val imm =
                     context!!.applicationContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(view.windowToken, 0)
@@ -121,9 +121,9 @@ class FirstFragment : Fragment() {
                         intermediateTimer!!.start()
                         activity!!.title = "Between rounds"
                         binding.currentRound.visibility = View.VISIBLE
-                        binding.currentRound.text = "Rounds left " + (totalRounds).toString()
+                        binding.currentRound.text = "${getString(R.string.roundsLefs)} $totalRounds"
                     } else {
-                        activity!!.title = "Round number $roundCounter"
+                        activity!!.title = "${getString(R.string.round)} $roundCounter"
                         start()
                     }
                 } else {
@@ -145,7 +145,7 @@ class FirstFragment : Fragment() {
             }
 
             override fun onFinish() {
-                activity!!.title = "Round number $roundCounter"
+                activity!!.title = "${getString(R.string.round)} $roundCounter"
                 binding.currentRound.visibility = View.INVISIBLE
                 sound!!.start()
                 roundTimer!!.start()

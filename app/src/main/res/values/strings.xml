@@ -10,4 +10,7 @@
     <string name="roundsNumberHint">Number of rounds</string>
     <string name="roundSecondsHint">Seconds of each round</string>
     <string name="intermediateSecondsHint">Seconds between rounds</string>
+
+    <string name="round">Round</string>
+    <string name="roundsLefs">Rounds left </string>
 </resources>
