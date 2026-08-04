@@ -1,39 +1,43 @@
-# Stretch Timer App
-
-## Overview
-
-A simple Android app that helps you perform stretch intervals. It allows you to set the number of rounds, the duration of each round, and an optional intermediate break between rounds. The app displays a countdown timer and plays a notification sound when a round or break ends.
+# Stretch Timer App 📱
+A lightweight **Android** utility that helps you perform stretch intervals. You can configure the number of rounds, the length of each round, and an optional break between rounds. The app displays a countdown timer, updates the action‑bar title, and plays a notification sound when a round or break ends.
 
 ## Key Features
-- Configurable total rounds, round time, and intermediate break time.
-- Visual countdown with current round display.
-- Audible notification using high-priority audio attributes (`USAGE_ALARM`).
-- **Guaranteed Background Execution:** Uses a **Foreground Service** combined with **AlarmManager.setAlarmClock** and **WakeLock** to ensure the timer advances and sounds play even when the screen is off or the phone is locked.
-- **State Persistence:** Uses `ViewModel` to persist user inputs and sync with the background service across configuration changes or app backgrounding.
-- **Portrait Optimized:** The application is locked to portrait orientation for a stable and predictable user experience.
-- Clean handling of resources (`MediaPlayer`, `WakeLock`, and Foreground Service lifecycle).
+- ✅ **Configurable rounds** – set total rounds, round duration and break time.
+- ⏱️ **Live countdown** with the current round number shown in the ActionBar.
+- 🔔 **Reliable notifications** using a foreground service, `AlarmManager.setAlarmClock`, and `USAGE_ALARM` audio attributes.
+- 📦 **State persistence** via `ViewModel` ensuring UI survives configuration changes.
+- 📱 **Portrait‑only UI** for a stable experience.
+- 🌐 **Multilingual support** – strings are externalized and translated for English, Spanish, Italian, German, French, Chinese, and Japanese.
+- 🎨 **High‑contrast colors** meeting WCAG accessibility standards.
 
 ## Screenshots
-![App Screenshot](front.png)
+![Running screen](front.png)
 
 ## Architecture
-- **MainActivity** – Hosts the navigation component.
-- **FirstFragment** – Handles the UI and observes timer data from the `TimerService` via the `TimerViewModel`.
-- **TimerViewModel** – Manages the binding to the `TimerService` and preserves user input state.
-- **TimerService** – A Foreground Service that handles the actual timer logic using `AlarmManager` for high-precision background execution.
-- Layouts are defined using View Binding.
+- **MainActivity** – hosts the Navigation component.
+- **FirstFragment** – collects user input and observes timer data.
+- **RunningFragment** – shows the active timer, pause state and remaining rounds.
+- **TimerViewModel** – bridges UI and `TimerService`.
+- **TimerService** – foreground service that drives the timer logic with `AlarmManager`.
+- **Resources** – all UI strings are stored in `res/values/strings.xml` and locale‑specific folders.
+
+## Localization
+The app ships with the following language packs:
+- 🇺🇸 English (default)
+- 🇪🇸 Spanish (`values-es`)
+- 🇮🇹 Italian (`values-it`)
+- 🇩🇪 German (`values-de`)
+- 🇫🇷 French (`values-fr`)
+- 🇨🇳 Chinese (`values-zh`)
+- 🇯🇵 Japanese (`values-ja`)
+
+Add more translations by creating a new `values-xx` folder and providing matching string resources.
 
 ## Build & Run
-1. Open the project in Android Studio.
-2. Ensure you have the required Android SDK (API 34 recommended).
-3. Sync Gradle, then run the app on an emulator or physical device.
-4. The app requires **Notification permissions** (on Android 13+) and uses `WAKE_LOCK` and `USE_EXACT_ALARM` to function correctly in the background.
-
-## Code Improvements Implemented
-- **Advanced Background Strategy**: Integrated `AlarmManager.setAlarmClock` for the most reliable wakeups on modern Android versions, ensuring transitions happen while the device is in deep sleep.
-- **Audio Reliability**: Configured `MediaPlayer` with `setWakeMode` and `USAGE_ALARM` to ensure notifications are heard even if the device is locked or CPU is throttled.
-- **Portrait Lock**: Simplified the layout and locked the Manifest to portrait mode, removing unnecessary orientation-handling complexity.
-- **ViewModel Sync**: Decoupled UI state from the background service, allowing the timer progress to remain visible and synced across lifecycle events.
+1. Open the project in **Android Studio**.
+2. Ensure the Android SDK (API 34 recommended) is installed.
+3. Sync Gradle and run the app on an emulator or device.
+4. Grant **Notification** permission on Android 13+ and allow the app to use `WAKE_LOCK` and `USE_EXACT_ALARM`.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
