@@ -10,4 +10,8 @@
         android:name="com.example.stretchtimer.FirstFragment"
         tools:layout="@layout/fragment_first">
     </fragment>
+    <fragment
+        android:id="@+id/RunningFragment"
+        android:name="com.example.stretchtimer.RunningFragment"
+        tools:layout="@layout/fragment_running" />
 </navigation>

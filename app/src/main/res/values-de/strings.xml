@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stretch Timer</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="first_fragment_label">Neue Sitzung</string>
+    <string name="buttonStart">Sitzung starten</string>
+    <string name="buttonCancel">Abbrechen</string>
+    <string name="buttonRestart">Neustarten</string>
+    <string name="roundsNumberHint">Anzahl der Runden</string>
+    <string name="roundSecondsHint">Sekunden pro Runde</string>
+    <string name="intermediateSecondsHint">Sekunden zwischen Runden</string>
+    <string name="round">Runde</string>
+    <string name="pause">Pause</string>
+    <string name="roundsLefs">Verbleibende Runden </string>
+</resources>

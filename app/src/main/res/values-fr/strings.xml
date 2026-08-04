@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chronomètre d\'étirement</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="first_fragment_label">Nouvelle session</string>
+    <string name="buttonStart">Démarrer la session</string>
+    <string name="buttonCancel">Annuler</string>
+    <string name="buttonRestart">Redémarrer</string>
+    <string name="roundsNumberHint">Nombre de rounds</string>
+    <string name="roundSecondsHint">Secondes par round</string>
+    <string name="intermediateSecondsHint">Secondes entre les rounds</string>
+    <string name="round">Round</string>
+    <string name="pause">Pause</string>
+    <string name="roundsLefs">Rounds restants </string>
+</resources>

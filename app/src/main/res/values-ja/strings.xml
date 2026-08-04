@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ストレッチタイマー</string>
+    <string name="action_settings">設定</string>
+    <string name="first_fragment_label">新しいセッション</string>
+    <string name="buttonStart">セッション開始</string>
+    <string name="buttonCancel">キャンセル</string>
+    <string name="buttonRestart">再起動</string>
+    <string name="roundsNumberHint">ラウンド数</string>
+    <string name="roundSecondsHint">ラウンドごとの秒数</string>
+    <string name="intermediateSecondsHint">ラウンド間の秒数</string>
+    <string name="round">ラウンド</string>
+    <string name="pause">一時停止</string>
+    <string name="roundsLefs">残りラウンド </string>
+</resources>

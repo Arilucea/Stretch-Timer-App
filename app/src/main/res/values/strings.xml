@@ -12,5 +12,6 @@
     <string name="intermediateSecondsHint">Seconds between rounds</string>
 
     <string name="round">Round</string>
+    <string name="pause">Pause</string>
     <string name="roundsLefs">Rounds left </string>
 </resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">伸展计时器</string>
+    <string name="action_settings">设置</string>
+    <string name="first_fragment_label">新会话</string>
+    <string name="buttonStart">开始会话</string>
+    <string name="buttonCancel">取消</string>
+    <string name="buttonRestart">重新开始</string>
+    <string name="roundsNumberHint">轮次数量</string>
+    <string name="roundSecondsHint">每轮秒数</string>
+    <string name="intermediateSecondsHint">轮间秒数</string>
+    <string name="round">轮次</string>
+    <string name="pause">暂停</string>
+    <string name="roundsLefs">剩余轮次 </string>
+</resources>

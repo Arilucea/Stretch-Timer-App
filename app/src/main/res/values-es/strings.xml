@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cronómetro de Estiramiento</string>
+    <string name="action_settings">Configuración</string>
+    <string name="first_fragment_label">Nueva sesión</string>
+    <string name="buttonStart">Iniciar sesión</string>
+    <string name="buttonCancel">Cancelar</string>
+    <string name="buttonRestart">Reiniciar</string>
+    <string name="roundsNumberHint">Número de rondas</string>
+    <string name="roundSecondsHint">Segundos por ronda</string>
+    <string name="intermediateSecondsHint">Segundos entre rondas</string>
+    <string name="round">Ronda</string>
+    <string name="pause">Pausa</string>
+    <string name="roundsLefs">Rondas restantes </string>
+</resources>
