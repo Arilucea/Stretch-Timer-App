@@ -9,10 +9,7 @@ A lightweight **Android** utility that helps you perform stretch intervals. You 
 - 📱 **Portrait‑only UI** for a stable experience.
 - 🌐 **Multilingual support** – strings are externalized and translated for English, Spanish, Italian, German, French, Chinese, and Japanese.
 - 🎨 **High‑contrast colors** meeting WCAG accessibility standards.
-
-## Screenshots
-![Running screen](front.png)
-
+  
 ## Architecture
 - **MainActivity** – hosts the Navigation component.
 - **FirstFragment** – collects user input and observes timer data.
